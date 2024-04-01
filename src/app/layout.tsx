@@ -9,7 +9,6 @@ export async function generateMetadata(): Promise<any> {
   const response = await fetch(`https://swyp-live-back.swypebites.com/dev/user/seller/meomeo`).then((res) =>
     res.json()
   );
-  console.log("🚀 ~ response:", response);
   return {
     title: `I am ${response.data.owner.displayName}`,
     description: `I am ${response.data.owner.displayName}`,
@@ -20,13 +19,13 @@ export async function generateMetadata(): Promise<any> {
       siteName: "myapp",
       title: `${response.data.owner.displayName} | Product Information and Reviews `,
       description: `I am ${response.data.owner.displayName}`,
-      images: response.data.owner.profileUrl,
+      images: "/image/seo-image.png",
     },
     twitter: {
       card: "summary",
       title: `I am ${response.data.owner.displayName} | Product Information and Reviews `,
       description: `I am ${response.data.owner.displayName}`,
-      images: response.data.owner.profileUrl,
+      images: "/image/seo-image.png",
     },
   };
 }
